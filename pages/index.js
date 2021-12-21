@@ -6,6 +6,11 @@ import { useUser } from "@auth0/nextjs-auth0";
 
 export default function Home() {
   const { isLoading, user } = useUser();
+
+  if (isLoading) {
+    return <p>Loading...</p>;
+  }
+
   return (
     <div className={styles.container}>
       <Head>
