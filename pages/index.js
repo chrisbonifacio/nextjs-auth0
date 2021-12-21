@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import { useUser } from "@auth0/nextjs-auth0";
 
@@ -20,11 +21,11 @@ export default function Home() {
           <p>Get started by clicking to Sign In</p>
           <br />
           {!user ? (
-            <a href="/api/auth/login">Login</a>
+            <Link href="/api/auth/login">Login</Link>
           ) : (
             <>
               <p>Welcome, {user.name}!</p>
-              <a href="/api/auth/logout">Sign Out</a>
+              <Link href="/api/auth/logout">Sign Out</Link>
             </>
           )}
         </div>
